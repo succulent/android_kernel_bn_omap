@@ -107,7 +107,7 @@ static struct omap_musb_board_data musb_board_data = {
 #else
 	.mode			= MUSB_PERIPHERAL,
 #endif
-	.power			= 200,
+	.power			= 500,
 };
 
 static struct omap2_hsmmc_info mmc[] = {
