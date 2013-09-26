@@ -410,7 +410,7 @@ config MACH_OMAP4_PANDA
 
 config FORCE_SILICON_PERFORMANCE
 	bool "Force SILICON_TYPE_PERFORMANCE higher CPU Ghz settings"
-	depends on MACH_OMAP4_BOWSER
+	depends on MACH_OMAP_OVATION
 	default N
 	help
 	  Enables the SILICON_TYPE_PERFORMANCE flag for CPU settings.
