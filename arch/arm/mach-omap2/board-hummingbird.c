@@ -119,7 +119,7 @@ static struct omap_musb_board_data musb_board_data = {
 #else
 	.mode			= MUSB_PERIPHERAL,
 #endif
-	.power			= 200,
+	.power			= 500,
 };
 
 static struct omap2_hsmmc_info mmc[] = {
@@ -140,13 +140,13 @@ static struct omap2_hsmmc_info mmc[] = {
 		.gpio_cd	= 0,
 	},
 	{
-                .mmc            = 3,
-                .caps           = MMC_CAP_4_BIT_DATA | MMC_CAP_POWER_OFF_CARD,
-                .gpio_cd        = -EINVAL,
-                .gpio_wp        = -EINVAL,
-                .ocr_mask       = MMC_VDD_165_195,
-		.nonremovable   = true,
-        },
+		.mmc		= 3,
+		.caps		= MMC_CAP_4_BIT_DATA | MMC_CAP_POWER_OFF_CARD,
+		.gpio_cd	= -EINVAL,
+		.gpio_wp	= -EINVAL,
+		.ocr_mask	= MMC_VDD_165_195,
+		.nonremovable	= true,
+	},
 	{}	/* Terminator */
 };
 
@@ -203,6 +203,7 @@ static int __init omap4_twl6030_hsmmc_init(struct omap2_hsmmc_info *controllers)
 
 	return 0;
 }
+
 static void omap4_audio_conf(void)
 {
 	/* twl6040 naudint */
@@ -251,8 +252,8 @@ static int __init kxtj9_dev_init(void)
 }
 
 struct kxtf9_platform_data kxtf9_platform_data_here = {
-	.min_interval   = 1,	   //1
-	.poll_interval  = 1000,	
+	.min_interval   = 1,
+	.poll_interval  = 1000,
 
 	.g_range	= KXTF9_G_8G,
 	.shift_adj	= SHIFT_ADJ_2G,
